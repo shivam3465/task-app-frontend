@@ -12,48 +12,50 @@ function App() {
 		<div>
 			<Router>
 				<Routes>
-					{/* Protected Route */}
+					{/* for login state check */}
 					<Route element={<AuthGuard />}>
 						<Route path="/" element={<div>Hello</div>} />
-					</Route>
 
-					{/* Public Route */}
-					<Route
-						path="/login"
-						element={
-							<AuthPage
-								pageType={UserConfig.AUTH_PAGE.TYPE.LOGIN}
-							/>
-						}
-					/>
-					<Route
-						path="/register"
-						element={
-							<AuthPage
-								pageType={UserConfig.AUTH_PAGE.TYPE.REGISTER}
-							/>
-						}
-					/>
-					<Route
-						path="/forgot-password"
-						element={
-							<AuthPage
-								pageType={
-									UserConfig.AUTH_PAGE.TYPE.FORGOT_PASSWORD
-								}
-							/>
-						}
-					/>
-					<Route
-						path="/reset-password"
-						element={
-							<AuthPage
-								pageType={
-									UserConfig.AUTH_PAGE.TYPE.VALIDATE_OTP
-								}
-							/>
-						}
-					/>
+						<Route
+							path="/login"
+							element={
+								<AuthPage
+									pageType={UserConfig.AUTH_PAGE.TYPE.LOGIN}
+								/>
+							}
+						/>
+						<Route
+							path="/register"
+							element={
+								<AuthPage
+									pageType={
+										UserConfig.AUTH_PAGE.TYPE.REGISTER
+									}
+								/>
+							}
+						/>
+						<Route
+							path="/forgot-password"
+							element={
+								<AuthPage
+									pageType={
+										UserConfig.AUTH_PAGE.TYPE
+											.FORGOT_PASSWORD
+									}
+								/>
+							}
+						/>
+						<Route
+							path="/reset-password"
+							element={
+								<AuthPage
+									pageType={
+										UserConfig.AUTH_PAGE.TYPE.VALIDATE_OTP
+									}
+								/>
+							}
+						/>
+					</Route>
 				</Routes>
 			</Router>
 			<ToastContainer />

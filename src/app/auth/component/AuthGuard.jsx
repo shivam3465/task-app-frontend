@@ -26,7 +26,6 @@ const AuthGuard = () => {
 			if (data) {
 				dispatch(setUser(data.user));
 				dispatch(setIsLoggedIn(true));
-				dispatch(setNotifications(data.user.invitesReceived));
 			} else {
 				//else user is not logged In
 				dispatch(setUser({}));

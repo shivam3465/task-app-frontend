@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -100,6 +100,9 @@ const AuthPage = ({ pageType }) => {
 		//pre storing email in data object for validate otp page from route params
 		if (pageType === AUTH_PAGE.TYPE.VALIDATE_OTP) setData({ email });
 	}, [pageType]);
+
+	// if user is loggedIn then go to homepage
+	if (isLoggedIn) return <Navigate to={"/"} />;
 
 	return (
 		<div className="flex items-center justify-center h-screen w-screen bg-backgroundGradient">
