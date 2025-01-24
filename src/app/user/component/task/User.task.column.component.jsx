@@ -82,8 +82,7 @@ const TaskColumn = ({
 			<div className="flex flex-col gap-2 p-4 min-h-[250px]">
 				{isLoading ? (
 					<TaskItemSkeleton />
-				) : (
-					tasks &&
+				) : tasks && tasks.length > 0 ? (
 					tasks.map((task, i) => (
 						<TaskItem
 							key={task._id}
@@ -92,6 +91,10 @@ const TaskColumn = ({
 							setFetchTask={setFetchTask}
 						/>
 					))
+				) : (
+					<div className="bg-[#ffffff4c] shadow-md border-[1px] border-[#dbdbdb] py-8 text-gray-600 font-semibold rounded-lg p-4 w-full min-h[250px] text-center">
+						No task found
+					</div>
 				)}
 			</div>
 		</div>

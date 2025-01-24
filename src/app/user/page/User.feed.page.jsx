@@ -77,10 +77,10 @@ const FeedPage = () => {
 
 				{/* post container  */}
 				<div>
+					{console.log("feeds ", feeds)}
 					{isLoading ? (
 						<PostItemSkeleton />
-					) : (
-						feeds &&
+					) : feeds && feeds.length > 0 ? (
 						feeds?.map((feed, i) => (
 							<UserFeedComponent
 								setFetchFeed={setFetchFeed}
@@ -89,6 +89,10 @@ const FeedPage = () => {
 								key={i}
 							/>
 						))
+					) : (
+						<div className="bg-white shadow-md border-[1px] border-[#dbdbdb] my-4 rounded-lg p-4 w-full">
+							No post found
+						</div>
 					)}
 				</div>
 			</div>

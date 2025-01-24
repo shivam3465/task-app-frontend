@@ -110,6 +110,7 @@ const NewPostComponent = ({ setFetchFeed, closeModal }) => {
 				<input
 					type="file"
 					name="image"
+					accept="image/*"
 					onChange={handleFileChange}
 					style={{ display: "none" }}
 					ref={imageInputRef}
