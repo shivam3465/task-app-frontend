@@ -39,9 +39,11 @@ const MainHeader = () => {
 
 	return (
 		isLoggedIn && (
-			<div className="flex items-center justify-between py-2 px-4 bg-[#00000017] ">
-				<div className="cursor-pointer text-lg">Affworld</div>
-				<div className="flex items-center justify-between border-[1px] border-[#d0d0d057] bg-[#d0d0d026] rounded-full">
+			<div className="flex items-center justify-between py-2 px-4 sticky z-10 top-0 bg-[#12121245] ">
+				<div className="cursor-pointer text-[22px] font-bold text-white">
+					Affworld
+				</div>
+				<div className="flex items-center justify-between border-[1px] border-[#d0d0d057] bg-[#b1b1b139] rounded-full">
 					{headerOptions.map((option) => (
 						<Link
 							to={option.path}
@@ -49,7 +51,7 @@ const MainHeader = () => {
 							className={`cursor-pointer rounded-full py-[6px] px-8 ${
 								currentRoute === option.path
 									? "bg-gray-300"
-									: "hover:bg-[#80808064]"
+									: "hover:bg-[#dcdcdce8]"
 							}`}>
 							{option.label}
 						</Link>
@@ -59,8 +61,9 @@ const MainHeader = () => {
 				<div className="settings">
 					<div
 						title="Logout"
-						className="p-2 cursor-pointer text-white hover:bg-[#9da6a753] rounded-full mr-4 "
+						className=" flex items-center justify-center gap-2 p-2 cursor-pointer text-white hover:bg-[#9da6a753] rounded-full mr-4 "
 						onClick={handleLogout}>
+						Logout
 						<IoIosLogOut className="text-[20px]" />
 					</div>
 				</div>

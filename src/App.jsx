@@ -13,7 +13,8 @@ import FeedPage from "./app/user/page/User.feed.page";
 
 function App() {
 	return (
-		<div className="bg-backgroundGradient">
+		<div>
+			<div className="bg-backgroundGradient fixed top-0 left-0 w-full h-screen z-[-1]"></div>
 			<Router>
 				{/* for checking the authentication  */}
 				<AuthGuard />

@@ -16,12 +16,13 @@ const TaskItem = ({ task, setIsLoading, setFetchTask }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const { title, desc, _id: id, status } = task;
 
-	const [{ opacity }, dragRef] = useDrag(() => ({
+	const [{ isDragging }, dragRef] = useDrag(() => ({
 		type: ItemTypes.CARD, // The type of the item being dragged
 		item: { id, title, desc, status }, // The data being dragged (task data)
 		collect: (monitor) => ({
-			opacity: monitor.isDragging() ? 0.9 : 1, // Adjust opacity while dragging
+			isDragging: !!monitor.isDragging(), // Adjust opacity while dragging
 		}),
+		options: { dragPreviewOptions: { isDragging: 1 } },
 	}));
 
 	const handleDeleteConfirmation = (id) => {
@@ -36,15 +37,12 @@ const TaskItem = ({ task, setIsLoading, setFetchTask }) => {
 		);
 		setIsLoading(false);
 
-		console.log("resut l", result);
 		if (result.success) {
 			toast.success(result.message);
 			setFetchTask(true);
 		} else {
 			const errorMessage =
-				result.message ||
-				error.message ||
-				"Something went wrong";
+				result.message || error.message || "Something went wrong";
 			toast.error(errorMessage);
 		}
 	};
@@ -52,8 +50,10 @@ const TaskItem = ({ task, setIsLoading, setFetchTask }) => {
 	return (
 		<div
 			ref={dragRef}
-			style={{ opacity }}
-			className="bg-white p-4 rounded shadow cursor-pointer flex justify-between items-center ">
+			style={{
+				opacity: `1 !important`,
+			}}
+			className="bg-white p-4 rounded shadow flex justify-between items-center hover:cursor-grab active:cursor-grabbing  ">
 			<div className="flex flex-col flex-1 overflow-hidden ">
 				<h3
 					title={title}
