@@ -10,6 +10,7 @@ import { UserConfig } from "./app/common/constants/user.config";
 import MainHeader from "./app/main/component/Main.header.component";
 import TaskPage from "./app/user/page/User.task.page";
 import FeedPage from "./app/user/page/User.feed.page";
+import AuthWrapper from "./app/auth/component/AuthWrapper.component";
 
 function App() {
 	return (
@@ -21,8 +22,10 @@ function App() {
 
 				<MainHeader />
 				<Routes>
-					<Route path="/" element={<TaskPage />} />
-					<Route path="/feeds" element={<FeedPage />} />
+					<Route element={<AuthWrapper />}>
+						<Route path="/" element={<TaskPage />} />
+						<Route path="/feeds" element={<FeedPage />} />
+					</Route>
 
 					<Route
 						path="/login"

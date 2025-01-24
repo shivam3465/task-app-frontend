@@ -37,9 +37,6 @@ const AuthGuard = () => {
 			fetchUserDetail();
 		}
 	}, [isLoggedIn, dispatch]);
-
-	// Show login page if not authenticated
-	return isLoggedIn ? <></> : <Navigate to="/login" />;
 };
 
 export default AuthGuard;
