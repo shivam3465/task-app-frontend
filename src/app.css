@@ -31,29 +31,19 @@
 	cursor: grabbing;
 }
 
-.icon {
-	background: linear-gradient(
-		40deg,
-		rgb(119, 81, 245) 0%,
-		rgba(144, 78, 222, 0.836635728510154) 58%,
-		rgb(182, 76, 252) 100%
-	);
-	color: transparent;
-	-webkit-background-clip: text;
-	background-clip: text;
+.shimmer-container{
+	animation: opacity-dull 1.25s infinite linear;
 }
 
 .shimmer {
 	background: linear-gradient(
 		to right,
-		transparent 0%,
-		rgba(44, 44, 44, 0.451) 50%,
-		white 100%
+		#f0efef 0%,
+		#c3c3c373 50%,
+		#f0efef 100%
 	);
 	background-size: 200% 100%;
-	animation: shimmer 2s infinite linear;
-	border-radius: 8px;
-	margin: 8px 0;
+	animation: shimmer 2s infinite linear;	
 }
 
 @keyframes shimmer {
@@ -62,6 +52,15 @@
 	}
 	to {
 		background-position: -200% 0;
+	}
+}
+
+@keyframes opacity-dull {
+	0%,100% {
+		filter: brightness(100%);
+	}
+	50% {
+		filter: brightness(88%);
 	}
 }
 

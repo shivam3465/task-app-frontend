@@ -18,7 +18,7 @@ const ModalWrapper = ({ children, isOpen, setIsOpen }) => {
 					onClose={() => dispatch(setIsOpen(false))}
 					className="relative z-50 transition">
 					<div className="fixed inset-0 flex w-screen items-center justify-center p-4 bg-[#4c4b4b48]">
-						<DialogPanel className="max-w-lg space-y-4 border min-w-[20rem] sm:min-w-[25rem] shadow-shadowCard bg-white rounded-[10px]">
+						<DialogPanel className="max-w-[580px] space-y-4 border-none min-w-[20rem] sm:min-w-[25rem] shadow-shadowCard bg-white rounded-[10px]">
 							{children}
 						</DialogPanel>
 					</div>

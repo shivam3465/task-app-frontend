@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {
 	setIsLoggedIn,
 	setLoading,
-	setNotifications,
 	setUser,
 } from "../../main/redux/slice/user.slice";
 import { getDataApiService } from "../../common/services/get.data.api.service";
@@ -28,7 +27,7 @@ const AuthGuard = () => {
 				dispatch(setIsLoggedIn(true));
 			} else {
 				//else user is not logged In
-				dispatch(setUser({}));
+				dispatch(setUser(null));
 				dispatch(setIsLoggedIn(false));
 			}
 		};
@@ -40,7 +39,7 @@ const AuthGuard = () => {
 	}, [isLoggedIn, dispatch]);
 
 	// Show login page if not authenticated
-	return isLoggedIn ? <Outlet /> : <Navigate to="/login" />;
+	return isLoggedIn ? <></> : <Navigate to="/login" />;
 };
 
 export default AuthGuard;
