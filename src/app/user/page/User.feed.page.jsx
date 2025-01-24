@@ -5,6 +5,7 @@ import { FeedConfig } from "../../common/constants/feed.config";
 import { FaPlus } from "react-icons/fa6";
 import ModalWrapper from "../../common/component/ModalWrapper/ModalWrapper";
 import NewPostComponent from "../component/feed/User.new.post.component";
+import PostItemSkeleton from "../../common/component/Skeleton/Post.item.skeleton.component";
 
 const FeedPage = () => {
 	const [feeds, setFeeds] = useState([]);
@@ -77,7 +78,7 @@ const FeedPage = () => {
 				{/* post container  */}
 				<div>
 					{isLoading ? (
-						<div>Loading ... </div>
+						<PostItemSkeleton />
 					) : (
 						feeds &&
 						feeds?.map((feed, i) => (

@@ -41,8 +41,7 @@ const NewPostComponent = ({ setFetchFeed, closeModal }) => {
 	};
 
 	const handleSubmit = async (e) => {
-		e.preventDefault();
-		console.log("data ", data);
+		e.preventDefault();		
 
 		if (data.content && data.image) {
 			setIsLoading(true);
