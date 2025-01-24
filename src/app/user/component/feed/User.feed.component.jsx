@@ -14,7 +14,9 @@ const UserFeedComponent = ({ feed, setIsLoading, setFetchFeed }) => {
 	const { user } = useSelector((state) => state.user);
 
 	const handleDeleteConfirmation = () => {
-		if (userId._id == user?._id) setIsModalOpen(true);
+		console.log("user ", user, userId);
+		if (!user || !userId) return;
+		if (userId?._id == user?._id) setIsModalOpen(true);
 	};
 
 	const deleteTaskConfirmed = async () => {
@@ -60,7 +62,7 @@ const UserFeedComponent = ({ feed, setIsLoading, setFetchFeed }) => {
 					</div>
 				</div>
 
-				{userId._id == user._id && (
+				{userId._id == user?._id && (
 					<button
 						onClick={handleDeleteConfirmation}
 						className=" border-[1px] text-red-400 hover:text-red-500  hover:border-red-500 border-transparent rounded-full p-1 active:scale-[0.98]">
