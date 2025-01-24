@@ -76,8 +76,7 @@ const FeedPage = () => {
 				</ModalWrapper>
 
 				{/* post container  */}
-				<div>
-					{console.log("feeds ", feeds)}
+				<div>					
 					{isLoading ? (
 						<PostItemSkeleton />
 					) : feeds && feeds.length > 0 ? (

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { FeedConfig } from "../../../common/constants/feed.config";
 import { deleteDataApiService } from "../../../common/services/delete.data.api.service";
 import { toast } from "react-toastify";
+import { formatDateToDateTimeString } from "../../../common/utils/date.utils";
 
 const UserFeedComponent = ({ feed, setIsLoading, setFetchFeed }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,7 +57,7 @@ const UserFeedComponent = ({ feed, setIsLoading, setFetchFeed }) => {
 							{name || "Anonymous User"}
 						</h3>
 						<p className="text-sm text-gray-500">
-							{new Date(updatedAt).toDateString()}
+							{formatDateToDateTimeString(updatedAt)}
 						</p>
 					</div>
 				</div>
