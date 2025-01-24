@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { FeedConfig } from "../../../common/constants/feed.config";
 import { IoIosClose } from "react-icons/io";
 import { GrAttachment } from "react-icons/gr";
+import loaderImage from "../../../../assets/loader.gif";
 
 const NewPostComponent = ({ setFetchFeed, closeModal }) => {
 	const [data, setData] = useState({});
@@ -41,7 +42,7 @@ const NewPostComponent = ({ setFetchFeed, closeModal }) => {
 	};
 
 	const handleSubmit = async (e) => {
-		e.preventDefault();		
+		e.preventDefault();
 
 		if (data.content && data.image) {
 			setIsLoading(true);
@@ -121,7 +122,7 @@ const NewPostComponent = ({ setFetchFeed, closeModal }) => {
 						className="flex items-center justify-center gap-3 bg-blue-500 text-white py-2 px-4 rounded active:scale-[0.98] cursor-pointer disabled:cursor-not-allowed disabled:bg-blue-400 ">
 						{isLoading && (
 							<img
-								src="../../../../assets/loader.gif"
+								src={loaderImage}
 								alt="Loader"
 								className="h-full w-[25px]"
 							/>

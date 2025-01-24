@@ -4,6 +4,7 @@ import { postDataApiService } from "../../../common/services/post.data.api.servi
 import { toast } from "react-toastify";
 import { TaskConfig } from "../../../common/constants/task.config";
 import { IoIosClose } from "react-icons/io";
+import loaderImage from "../../../../assets/loader.gif";
 
 const TaskForm = ({ setFetchTask, status, closeModal }) => {
 	const [data, setData] = useState({});
@@ -97,7 +98,7 @@ const TaskForm = ({ setFetchTask, status, closeModal }) => {
 						className="flex items-center justify-center gap-3 bg-blue-500 text-white py-2 px-4 rounded active:scale-[0.98] cursor-pointer disabled:cursor-not-allowed disabled:bg-blue-400 ">
 						{isLoading && (
 							<img
-								src="../../../../assets/loader.gif"
+								src={loaderImage}
 								alt="Loader"
 								className="h-full w-[25px]"
 							/>

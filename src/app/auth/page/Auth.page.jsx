@@ -9,6 +9,7 @@ import { validateData } from "../service/auth.util.service";
 import { setIsLoggedIn, setUser } from "../../main/redux/slice/user.slice";
 import { postDataApiService } from "../../common/services/post.data.api.service";
 import { UserConfig } from "../../common/constants/user.config";
+import loaderImage from "../../../assets/loader.gif";
 
 const AuthPage = ({ pageType }) => {
 	const [data, setData] = useState({});
@@ -188,7 +189,7 @@ const AuthPage = ({ pageType }) => {
 						type={"submit"}>
 						{loading ? (
 							<img
-								src="https://affworld-app.netlify.app/assets/loader.gif"
+								src={loaderImage}
 								alt="Loader"
 								className="h-full"
 							/>

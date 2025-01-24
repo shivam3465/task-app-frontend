@@ -1,5 +1,5 @@
 import { useState } from "react";
-import profilePicture from "../../../../../assets/profile.png";
+import profilePicture from "../../../../assets/profile.png";
 import ConfirmationModal from "../../../common/component/Confirmation.modal";
 import { MdDelete } from "react-icons/md";
 import { useSelector } from "react-redux";
