@@ -188,7 +188,7 @@ const AuthPage = ({ pageType }) => {
 						type={"submit"}>
 						{loading ? (
 							<img
-								src="../../../../assets/loader.gif"
+								src="https://affworld-app.netlify.app/assets/loader.gif"
 								alt="Loader"
 								className="h-full"
 							/>
