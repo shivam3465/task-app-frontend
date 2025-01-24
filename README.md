@@ -51,8 +51,8 @@ This is a web application built using React and Vite that includes three main fe
 
 1. **Clone the Repository**:  
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/shivam3465/task-app-frontend
+   cd task-app-frontend
    ```
 
 2. **Install Dependencies**:  
@@ -64,9 +64,7 @@ This is a web application built using React and Vite that includes three main fe
 3. **Set Up Environment Variables**:  
    Create a `.env` file in the root directory and add the following variables:  
    ```env
-   VITE_API_BASE_URL=<your-backend-api-base-url>
-   VITE_CLOUDINARY_CLOUD_NAME=<your-cloudinary-cloud-name>
-   VITE_CLOUDINARY_UPLOAD_PRESET=<your-cloudinary-upload-preset>
+   VITE_API_BASE_URL=http://localhost:4000
    ```
    Replace the placeholders with actual values for your backend API and Cloudinary.
 
@@ -77,7 +75,7 @@ This is a web application built using React and Vite that includes three main fe
    ```
 
 5. **Access the Application**:  
-   Open your browser and navigate to `http://localhost:5173`.
+   Open your browser and navigate to `http://localhost:3000`.
 
 6. **Build the Project for Production**:  
    To build the project for production, run:  
@@ -100,7 +98,6 @@ This is a web application built using React and Vite that includes three main fe
 - **React Router**: For managing routes and navigation.
 - **Redux Toolkit**: For state management.
 - **Axios**: For making API requests.
-- **Cloudinary**: For storing and retrieving media files (used in the feed section).
 - **Toastify**: For displaying notifications.
 
 ---
