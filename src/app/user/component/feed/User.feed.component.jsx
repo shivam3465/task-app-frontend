@@ -14,7 +14,6 @@ const UserFeedComponent = ({ feed, setIsLoading, setFetchFeed }) => {
 	const { user } = useSelector((state) => state.user);
 
 	const handleDeleteConfirmation = () => {
-		console.log("user ", user, userId);
 		if (!user || !userId) return;
 		if (userId?._id == user?._id) setIsModalOpen(true);
 	};

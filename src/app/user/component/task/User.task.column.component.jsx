@@ -46,7 +46,6 @@ const TaskColumn = ({
 		drop: (item) => {
 			if (isLoading) return;
 			// Call the function to move the task
-			console.log("Dropped task:", item, item.id, item.status, status);
 			updateTaskStatus(item.id, status);
 		},
 	}));
